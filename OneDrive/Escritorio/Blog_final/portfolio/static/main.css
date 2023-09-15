@@ -1,0 +1,21 @@
+body {
+    background: #000000;
+}
+
+.bg-black {
+    background: #000000;
+}
+
+.card-project:hover {
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+img {
+    max-width: 40%;
+    border: 1px solid #fff;
+    cursor: pointer;
+    max-height: 200%;
+    vertical-align: middle;
+}
+

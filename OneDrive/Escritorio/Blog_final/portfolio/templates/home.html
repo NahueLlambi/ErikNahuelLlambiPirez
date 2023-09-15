@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    
+{% load static %}
+
+<header class="row">
+    <div class="col-md-3">
+        <img src="{% static 'unnamed.png' %}" alt="">
+    </div>
+
+    <div class="col-md-9 my-auto">
+        <div class="content-container">
+            <h1> ¡Bienvenidos a Yu-Gi-Oh! Master Duel en Uruguay!</h1>
+            <a href="https://play.google.com/store/apps/details?id=jp.konami.masterduel&hl=es_419&gl=US"
+               class="btn btn-primary btn-lg rounded-0 my-3"
+               target="blank"
+            >Descargar</a>
+        </div>
+    </div>
+</header>
+
+<div class="row my-9">
+    <h3>¿Qué es Master Duel?</h3>
+    <p>Master Duel es un juego de cartas coleccionables basado en el popular juego de cartas Yu-Gi-Oh!.</p>
+    
+    {% for Project in projects %}
+    <div class="col-md-11 p-4" style="margin-left: -1cm;">
+        <div class="card card-body bg-black">
+            <h2>{{ Project.Titulo }}</h2>
+            <p>{{ Project.Descripcion }}</p>   
+            <img src="{{ Project.Imagen.url }}" alt="{{ Project.Titulo }}" class="card-img-top">
+        
+            {% if Project.url %}
+                <a href="{{ Project.url }}">{{ Project.url }}</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<style>
+    .content-container {
+        margin-left: -5cm;
+    }
+</style>
+
+{% endblock %}
+
+
+
+
+
